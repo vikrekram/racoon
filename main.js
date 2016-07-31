@@ -1,9 +1,17 @@
-const {app, BrowserWindow} = require('electron');
+const http = require('http');
+const server = http.Server();
+
+const {app, BrowserWindow, ipcMain} = require('electron');
 
 let win;
 
 function createWindow () {
-  win = new BrowserWindow({width: 600, height: 450})
+  win = new BrowserWindow({
+    width: 250, height: 80,
+    frame: false,
+    resizable: false
+  });
+
   win.loadURL(`file://${__dirname}/app/index.html`)
 
   win.on('closed', () => { 
@@ -15,4 +23,8 @@ app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
   app.quit()
+});
+
+ipcMain.on('close-main-window', () => {
+  win.close();
 });
