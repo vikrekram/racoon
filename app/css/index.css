@@ -1,0 +1,40 @@
+html,
+body {
+    height: 500px;
+    width: 263px;
+    overflow: hidden;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+}
+
+.button {
+  position: absolute;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: solid 1px;
+  -webkit-app-region: no-drag;
+}
+.button:hover {
+  background-color: #c900ff;
+}
+
+#quit {
+  top: 0px;
+  left: 228px;
+  width:20px;
+}
+#quit:hover {
+  background-color: #f00;
+}
+
+#on {
+  top: 30px;
+  left: 30px;
+}
+
+#off {
+  top: 30px;
+  left: 140px;
+}
